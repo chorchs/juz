@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Crear Causa</h1>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.numero_causa.label }}<br>
+            {{ form.numero_causa(size=32) }}<br>
+            {% for error in form.numero_causa.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.tipo_causa.label }}<br>
+            {{ form.tipo_causa(size=32) }}<br>
+            {% for error in form.tipo_causa.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <h2>Víctima</h2>
+        <p>
+            {{ form.victima_nombre.label }}<br>
+            {{ form.victima_nombre(size=32) }}<br>
+            {% for error in form.victima_nombre.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.victima_apellido.label }}<br>
+            {{ form.victima_apellido(size=32) }}<br>
+            {% for error in form.victima_apellido.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.victima_dni.label }}<br>
+            {{ form.victima_dni(size=32) }}<br>
+            {% for error in form.victima_dni.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <h2>Agresor</h2>
+        <p>
+            {{ form.agresor_nombre.label }}<br>
+            {{ form.agresor_nombre(size=32) }}<br>
+            {% for error in form.agresor_nombre.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.agresor_apellido.label }}<br>
+            {{ form.agresor_apellido(size=32) }}<br>
+            {% for error in form.agresor_apellido.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.agresor_dni.label }}<br>
+            {{ form.agresor_dni(size=32) }}<br>
+            {% for error in form.agresor_dni.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Causas</h1>
+    <a href="{{ url_for('causas.create') }}">Crear Causa</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Número de Causa</th>
+                <th>Tipo de Causa</th>
+                <th>Víctima</th>
+                <th>Agresor</th>
+                <th>Reincidente</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for causa in causas %}
+            <tr>
+                <td>{{ causa.numero_causa }}</td>
+                <td>{{ causa.tipo_causa }}</td>
+                <td>{{ causa.victima.nombre }} {{ causa.victima.apellido }}</td>
+                <td>{{ causa.agresor.nombre }} {{ causa.agresor.apellido }}</td>
+                <td>{% if causa.agresor.reincidente %}Sí{% else %}No{% endif %}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
